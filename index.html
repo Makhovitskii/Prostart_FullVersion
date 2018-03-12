@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Title</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
+
+</head>
+
+<body>
+
+	<div class="preloader">
+		<img src="img/logo.png" alt="Logo">
+	</div>
+
+	<header>
+
+		<div class="logo">
+
+			<a href="#">
+
+				<img src="img/logo.png" alt="Prospect Cloud Light">
+
+			</a>
+
+		</div>
+
+		<div class="header_panel">
+
+			<div class="header_today">
+
+				<span>Bugün, 04 Oktyabr 2017</span>
+				<span>Çərşənbə</span>
+
+			</div>
+
+			<div class="header_user_tools_group">
+
+				<ul class="header_user_panel">
+
+					<li class="messages">
+
+                        <button class="dropdown-toggle" type="button" id="notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="img/icons/envelope.svg" alt="Messages">
+                            <span class="badge red">99</span> <!-- colors [red, blue, yellow] -->
+                        </button>
+
+                        <div class="dropdown-menu" aria-labelledby="notifications">
+                            <div class="header">
+                                - Messages -
+                            </div>
+                            <div class="body">
+                                <a href="#">
+                                    <img src="img/avatar.jpg" alt="">
+                                    <span class="name">Məmmədbağır Bağırzadəh</span>
+                                    <p>Təcili konsert barəsində danışmalıyıq yada yox nese bir soz yazim ki bit olsun</p>
+                                    <time>20 dəq</time>
+                                </a>
+                                <a href="#">
+                                    <img src="img/avatar.png" alt="">
+                                    <span class="name">Məmmədbağır Bağırzadəh</span>
+                                    <p>Təcili konsert barəsində danışmalıyıq yada yox nese bir soz yazim ki bit olsun</p>
+                                    <time>20 dəq</time>
+                                </a>
+                                <a href="#">
+                                    <img src="img/avatar.png" alt="">
+                                    <span class="name">Məmmədbağır Bağırzadəh</span>
+                                    <p>Təcili konsert barəsində danışmalıyıq yada yox nese bir soz yazim ki bit olsun</p>
+                                    <time>20 dəq</time>
+                                </a>
+                                <a href="#">
+                                    <img src="img/avatar.png" alt="">
+                                    <span class="name">Məmmədbağır Bağırzadəh</span>
+                                    <p>Təcili konsert barəsində danışmalıyıq yada yox nese bir soz yazim ki bit olsun</p>
+                                    <time>20 dəq</time>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="notifications">
+
+                        <button class="dropdown-toggle" type="button" id="notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="img/icons/bell.svg" alt="Notifications">
+                            <span class="badge red">18</span> <!-- colors [red, blue, yellow] -->
+                        </button>
+
+                        <div class="dropdown-menu" aria-labelledby="notifications">
+                            <div class="header">
+                                - Notifications -
+                            </div>
+                            <div class="body">
+                                <a href="#" class="global">
+                                    Global notification
+                                </a>
+                                <a href="#" class="cloud">
+                                    Cloud noptification
+                                </a>
+                                <a href="#" class="user">
+                                    User notification
+                                </a>
+                                <a href="#" class="adds">
+                                    Addvertising notification
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="holding">
+
+                        <button class="dropdown-toggle" type="button" id="holding" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>Gilan Holding</span>
+                            <span>
+                                <img src="img/icons/arrow-down.svg" alt="">
+                            </span>
+                        </button>
+
+                        <div class="dropdown-menu" aria-labelledby="holding">
+                            <a class="dropdown-item active" href="#">
+                                <img src="img/avatar.jpg">
+                                Pasha Insurance
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <img src="img/avatar.jpg">
+                                CENTRON
+                            </a>
+                        </div>
+
+                    </li>
+
+                    <li class="user">
+                        <button class="dropdown-toggle" type="button" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="img/avatar.jpg" alt="Gilan Holding">
+                        </button>
+
+                        <div class="dropdown-menu" aria-labelledby="user">
+                            <a class="dropdown-item" href="dashboard.html">
+                                <i class="fa fa-tachometer"></i> Dashboard
+                                <span class="badge red">5</span>
+                            </a>
+                            <a class="dropdown-item" href="profile.html">
+                                <i class="fa fa-user"></i> İstifadəçi profili
+                            </a>
+                            <a class="dropdown-item" href="settings.html">
+                                <i class="fa fa-wrench"></i> Ayarlar
+                                <span class="badge red">5</span>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa fa-money"></i> Ödənişlər
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa fa-sign-out"></i> Sistemdən çıx
+                            </a>
+                        </div>
+                    </li>
+
+
+				</ul>
+
+			</div>
+
+
+		</div>
+
+	</header>
+
+	<section class="nav">
+
+		<ul>
+
+			<li>
+
+				<a href="dashboard.html">
+
+					<img src="img/icons/dashboard.svg" alt="Günlük hesabat">
+
+					<span> Günlük hesabat </span>
+
+				</a>
+
+			</li>
+
+			<li>
+
+				<a href="index.html" class="active">
+
+					<img src="img/icons/attendance.svg" alt="Davamiyyət">
+
+					<span> Davamiyyət </span>
+
+				</a>
+
+			</li>
+
+			<li>
+
+				<a href="salary.html">
+
+					<img src="img/icons/salary.svg" alt="Əməkhaqqı jurnalı">
+
+					<span> Əməkhaqqı jurnalı  </span>
+
+				</a>
+
+			</li>
+
+			<li>
+
+				<a href="costs.html">
+
+					<img src="img/icons/costs.svg" alt="Xərclər jurnalı">
+
+					<span> Xərclər jurnalı </span>
+
+				</a>
+
+			</li>
+
+			<li>
+
+				<a href="cashbox.html">
+
+					<img src="img/icons/cashbox.svg" alt="Kassa jurnalı ">
+
+					<span> Kassa jurnalı  </span>
+
+				</a>
+			</li>
+
+			<li>
+
+				<a href="round.html">
+
+					<img src="img/icons/round.svg" alt="Dövriyyə jurnalı">
+
+					<span> Dövriyyə jurnalı </span>
+
+				</a>
+			</li>
+
+			<li>
+
+                <a href="debts.html">
+
+                    <img src="img/icons/debts.png" alt="Borclar jurnalı">
+
+                    <span> Borclar jurnalı </span>
+
+                </a>
+            </li>
+
+            <li>
+
+                <a href="task.html">
+
+                    <img src="img/icons/tasks.svg" alt="Tapşırıqlar jurnalı">
+
+                    <span> Tapşırıqlar jurnalı  </span>
+
+                </a>
+            </li>
+
+            <li>
+
+                <a href="reports.html">
+
+                    <img src="img/icons/reports.svg" alt="Hesabatlar">
+
+                    <span> Hesabatlar </span>
+
+                </a>
+            </li>
+
+            <li>
+
+                <a href="contacts.html">
+
+                    <img src="img/icons/contacts.svg" alt="Əlaqələr">
+
+                    <span> Əlaqələr </span>
+
+                </a>
+            </li>
+
+            <li>
+
+                <a href="callcenter.html">
+
+                    <img src="img/icons/callcenter.svg" alt="Zənglər jurnalı">
+
+                    <span> Zənglər jurnalı </span>
+
+                </a>
+            </li>
+		</ul>
+	</section>
+
+	<section class="sidebar">
+
+		<div class="sidebar_header">
+			<div class="sidebar_header_text">
+				Davamiyyət jurnalı
+			</div>
+			<a href="javascript:;" id="sbs" onclick="sidebar_settings();">
+				<img src="img/icons/settings.png" alt="Settings">
+			</a>
+
+			<div class="sidebar_settings">
+				<div class="sidebar_settings_header">
+					Cədvəlin ayarları
+					<a href="javascript:;" onclick="sidebar_settings_close();">
+						<img src="img/icons/close.png" alt="">
+					</a>
+				</div>
+				<ul>
+					<li>
+						<div class="checkbox checkbox-success">
+                    	    <input id="checkbox001" type="checkbox">
+                    	    <label for="checkbox001">
+                    	    	Əmədaşların ID nömrəsi
+                    	    </label>
+                    	</div>
+					</li>
+					<li>
+						<div class="checkbox checkbox-success">
+                    	    <input id="checkbox002" type="checkbox">
+                    	    <label for="checkbox002">
+                    	    	Gecikmə sayı
+                    	    </label>
+                    	</div>
+					</li>
+					<li>
+						<div class="checkbox checkbox-success">
+                    	    <input id="checkbox003" type="checkbox">
+                    	    <label for="checkbox003">
+                    	    	Gecikmə müddəti
+                    	    </label>
+                    	</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="sidebar_search">
+			<label for="search">Axtarış</label>
+			<div class="icon-input">
+				<input type="text" class="form-control no-border" id="search" placeholder="Əməkdaşın adı / soyadı">
+				<span class="icon-input-icon icon-input-icon-right">
+					<span>
+						<i class="fa fa-search"></i>
+					</span>
+				</span>
+			</div>
+		</div>
+		<div class="sidebar_calendar calendar-full"></div>
+		<div class="sidebar_filters">
+			<span>
+				Seçim üzrə filtrasiya
+			</span>
+			<ul>
+				<li>
+					<a href="#" class="active">
+						İşə gəlməyənlər
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						İşə gələnlər
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						Gecikənlər
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						Gecikməyənlər
+					</a>
+				</li>
+			</ul>
+		</div>
+
+	</section>
+
+	<section class="content">
+		<div class="container-fluid">
+
+			<div class="content_header_btn_group">
+				<div class="row">
+					<div class="col">
+						<div class="tile_btn btn-info">
+							<a href="structure.html">
+								<img src="img/icons/structure.png" alt="Structure">
+								<span>Şirkət strukturu
+									<small>8 şöbə, 14 bölmə</small>
+								</span>
+							</a>
+						</div>
+					</div>
+					<div class="col">
+						<div class="tile_btn btn-warning">
+							<a href="employee.html">
+								<img src="img/icons/workers.png" alt="Employee">
+								<span>Əməkdaşlar
+									<small>6 əməkdaş </small>
+								</span>
+							</a>
+						</div>
+					</div>
+					<div class="col">
+						<div class="tile_btn btn-danger">
+							<a href="work_hours.html">
+								<img src="img/icons/w-time.png" alt="Work Schelude">
+								<span>İş rejimi
+									<small>09:00 - 19:00</small>
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content_tools_line" style="display: ;">
+				<div class="row">
+					<div class="col">
+						<div class="content_current_dtw">
+							13 Sentyabr 2017
+						</div>
+						<div class="content_page_links">
+							<a href="#" data-toggle="tooltip" title="İş rejimindən götür!">
+    							İş rejimindən götür
+    						</a>
+						</div>
+					</div>
+					<div class="col">
+						<div class="content_page_tools">
+							<a href="javascript:;" class="btn icon-btn" id="table-state" data-toggle="tooltip" title="Bütün jurnal versiyasına bax">
+								<span>
+									Bütün jurnal
+								</span>
+							</a>
+							<div class="dropdown" style="display: inline-block;">
+								<button class="btn btn-info icon-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+									<img src="img/icons/file.png" alt="File">
+									İxrac
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+									<li>
+										<a href="#">İmzalı cədvəl</a>
+									</li>
+									<li>
+										<a href="#">İmzasız cədvəl</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content_table" style="display: ;">
+				<div class="row">
+					<div class="col" id="short-table">
+						<table class="inout-table">
+							<thead>
+								<tr>
+									<th sort="asc">
+										№
+									</th>
+									<th sort="desc">
+										Əməkdaş
+									</th>
+									<th sort="asc">
+										Gəldi
+									</th>
+									<th sort="asc">
+										Getdi
+									</th>
+									<th style="min-width: 150px;">
+										Status
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										01
+									</td>
+
+									<td>
+										<a href="javascript:;" onclick="notification('success');"> Məhərrəmov Əlimərdan </a>
+									</td>
+									<td>
+										<div class="input-time-group disabled">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="00:00" disabled="true">
+											<span>İndi gəldi</span>
+										</div>
+									</td>
+									<td>
+										<div class="input-time-group disabled">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="00:00" disabled="true">
+											<span>İndi gəldi</span>
+										</div>
+									</td>
+
+									<td>
+										<span class="flex inout">
+											<label class="switch">
+												<input type="checkbox" checked="true">
+												<span class="slider round"></span>
+											</label>
+                                            <span class="inout_text">Gəlib</span>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										02
+									</td>
+									<td>
+										<a href="javascript:;" onclick="notification('info');"> Maliki Əştər </a>
+									</td>
+									<td>
+										<div class="input-time-group">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="09:00">
+											<span>İndi gəldi</span>
+										</div>
+									</td>
+									<td>
+										<div class="input-time-group">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="09:00">
+											<span>İndi gəldi</span>
+										</div>
+									</td>
+									<td>
+										<span class="flex inout">
+											<label class="switch">
+												<input type="checkbox" checked="true">
+												<span class="slider round"></span>
+											</label>
+                                            <span class="inout_text">Gəlib</span>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										03
+									</td>
+									<td>
+										<a href="javascript:;" onclick="notification('danger');"> Nigar Quliyeva </a>
+									</td>
+									<td>
+										<div class="input-time-group">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="09:00">
+											<span>İndi gəldi</span>
+										</div>
+									</td>
+									<td>
+										<div class="input-time-group">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="09:00">
+											<span>İndi gəldi</span>
+										</div>
+									</td>
+									<td>
+										<span class="flex inout">
+											<label class="switch">
+												<input type="checkbox" checked="true">
+												<span class="slider round"></span>
+											</label>
+                                            <span class="inout_text">Gəlib</span>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										04
+									</td>
+									<td>
+										Orxan Mustafayev
+									</td>
+									<td>
+										<div class="input-time-group">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="09:00">
+											<span>İndi gəldi</span>
+										</div>
+									</td>
+									<td>
+										<div class="input-time-group">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="09:00">
+											<span>İndi gəldi</span>
+										</div>
+									</td>
+									<td>
+										<span class="flex inout">
+											<label class="switch">
+												<input type="checkbox" checked="true">
+												<span class="slider round"></span>
+											</label>
+                                            <span class="inout_text">Gəlib</span>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										05
+									</td>
+									<td>
+										Nadir Adbullayev
+									</td>
+									<td>
+										<div class="input-time-group">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="09:00">
+											<span>İndi gəldi</span>
+										</div>
+									</td>
+									<td>
+										<div class="input-time-group">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="09:00">
+											<span>İndi gəldi</span>
+										</div>
+									</td>
+									<td>
+										<span class="flex inout">
+											<label class="switch">
+												<input type="checkbox" checked="true">
+												<span class="slider round"></span>
+											</label>
+                                            <span class="inout_text">Gəlib</span>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										06
+									</td>
+									<td>
+										Salam Quliyev
+									</td>
+									<td>
+										<div class="input-time-group">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="09:00">
+											<span>İndi gəldi</span>
+										</div>
+									</td>
+									<td>
+										<div class="input-time-group">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="09:00">
+											<span>İndi gəldi</span>
+										</div>
+									</td>
+									<td>
+										<span class="flex inout">
+											<label class="switch">
+												<input type="checkbox" checked="true">
+												<span class="slider round"></span>
+											</label>
+                                            <span class="inout_text">Gəlib</span>
+										</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+
+					<div class="col" id="full-table" style="display: none;">
+						<table class="inout-table">
+							<thead>
+								<tr>
+									<th>
+										<a href="#">
+											№
+											<i class="fa fa-angle-down"></i>
+										</a>
+									</th>
+									<th>
+										<a href="#">
+											ID
+											<i class="fa fa-angle-down"></i>
+										</a>
+									</th>
+									<th>
+										<a href="#">
+											Əməkdaş
+											<i class="fa fa-angle-down"></i>
+										</a>
+									</th>
+									<th>
+										<a href="#">
+											Gəldi
+											<i class="fa fa-angle-down"></i>
+										</a>
+									</th>
+									<th>
+										<a href="#">
+											Getdi
+											<i class="fa fa-angle-down"></i>
+										</a>
+									</th>
+									<th>
+										<a href="#">
+											Gec.sayı
+											<i class="fa fa-angle-down"></i>
+										</a>
+									</th>
+									<th>
+										<a href="#">
+											Gec.müddəti
+											<i class="fa fa-angle-down"></i>
+										</a>
+									</th>
+									<th style="min-width: 150px;">
+										Status
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										01
+									</td>
+									<td>
+										a78vf5
+									</td>
+									<td>
+										Məhərrəmov Əlimərdan
+									</td>
+									<td width="140">
+										<div class="icon-after-input">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="00:00">
+											<span>
+												<span>
+													<i class="fa fa-circle"></i>
+												</span>
+											</span>
+										</div>
+									</td>
+									<td width="140">
+										<div class="icon-after-input active">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="00:00">
+											<span>
+												<span>
+													<i class="fa fa-circle"></i>
+												</span>
+											</span>
+										</div>
+									</td>
+									<td>
+										3
+									</td>
+									<td>
+										0 dəq.
+									</td>
+									<td>
+										<span class="flex inout">
+											<label class="switch">
+												<input type="checkbox">
+												<span class="slider round"></span>
+											</label>
+                                            <span class="inout_text">Gəlməyib</span>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										02
+									</td>
+									<td>
+										a78vf6
+									</td>
+									<td>
+										Maliki Əştər
+									</td>
+									<td width="140">
+										<div class="icon-after-input">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="09:00">
+											<span>
+												<span>
+													<i class="fa fa-circle"></i>
+												</span>
+											</span>
+										</div>
+									</td>
+									<td width="140">
+										<div class="icon-after-input">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="19:00">
+											<span>
+												<span class="active">
+													<i class="fa fa-circle"></i>
+												</span>
+											</span>
+										</div>
+									</td>
+									<td>
+										2
+									</td>
+									<td>
+										0 dəq.
+									</td>
+									<td>
+										<span class="flex inout">
+											<label class="switch">
+												<input type="checkbox" checked="true">
+												<span class="slider round"></span>
+											</label>
+                                            <span class="inout_text">Gəlib</span>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										03
+									</td>
+									<td>
+										a78vf6
+									</td>
+									<td>
+										Nigar Quliyeva
+									</td>
+									<td width="140">
+										<div class="icon-after-input">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="09:00">
+											<span>
+												<span>
+													<i class="fa fa-circle"></i>
+												</span>
+											</span>
+										</div>
+									</td>
+									<td width="140">
+										<div class="icon-after-input">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="19:00">
+											<span>
+												<span>
+													<i class="fa fa-circle"></i>
+												</span>
+											</span>
+										</div>
+									</td>
+									<td>
+										2
+									</td>
+									<td>
+										0 dəq.
+									</td>
+									<td>
+										<span class="flex inout">
+											<label class="switch">
+												<input type="checkbox" checked="true">
+												<span class="slider round"></span>
+											</label>
+                                            <span class="inout_text">Gəlib</span>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										04
+									</td>
+									<td>
+										a78vf6
+									</td>
+									<td>
+										Orxan Mustafayev
+									</td>
+									<td width="140">
+										<div class="icon-after-input active">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="09:00">
+											<span>
+												<span>
+													<i class="fa fa-circle"></i>
+												</span>
+											</span>
+										</div>
+									</td>
+									<td width="140">
+										<div class="icon-after-input active">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="19:00">
+											<span>
+												<span class="active">
+													<i class="fa fa-circle"></i>
+												</span>
+											</span>
+										</div>
+									</td>
+									<td>
+										2
+									</td>
+									<td>
+										0 dəq.
+									</td>
+									<td>
+										<span class="flex inout">
+											<label class="switch">
+												<input type="checkbox" checked="true">
+												<span class="slider round"></span>
+											</label>
+                                            <span class="inout_text">Gəlib</span>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										05
+									</td>
+									<td>
+										a78vf6
+									</td>
+									<td>
+										Nadir Adbullayev
+									</td>
+									<td width="140">
+										<div class="icon-after-input active">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="09:00">
+											<span>
+												<span>
+													<i class="fa fa-circle"></i>
+												</span>
+											</span>
+										</div>
+									</td>
+									<td width="140">
+										<div class="icon-after-input active">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="19:00">
+											<span>
+												<span>
+													<i class="fa fa-circle"></i>
+												</span>
+											</span>
+										</div>
+									</td>
+									<td>
+										2
+									</td>
+									<td>
+										0 dəq.
+									</td>
+									<td>
+										<span class="flex inout">
+											<label class="switch">
+												<input type="checkbox" checked="true">
+												<span class="slider round"></span>
+											</label>
+                                            <span class="inout_text">Gəlib</span>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										06
+									</td>
+									<td>
+										a78vf6
+									</td>
+									<td>
+										Salam Quliyev
+									</td>
+									<td width="140">
+										<div class="icon-after-input active">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="09:00">
+											<span>
+												<span>
+													<i class="fa fa-circle"></i>
+												</span>
+											</span>
+										</div>
+									</td>
+									<td width="140">
+										<div class="icon-after-input active">
+											<input type="text" class="form-control bordered input-time" placeholder="" value="19:00">
+											<span>
+												<span class="active">
+													<i class="fa fa-circle"></i>
+												</span>
+											</span>
+										</div>
+									</td>
+									<td>
+										2
+									</td>
+									<td>
+										0 dəq.
+									</td>
+									<td>
+										<span class="flex inout">
+											<label class="switch">
+												<input type="checkbox" checked="true">
+												<span class="slider round"></span>
+											</label>
+                                            <span class="inout_text">Gəlib</span>
+										</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col">
+						<div class="table-inline-count">
+							Nəticə sayı 06 - 06
+						</div>
+					</div>
+				</div>
+			</div>
+
+            <div class="emtyContentBlock">
+                <img src="img/emptyContent/employee.png">
+                <p>
+                    Əməkdaşların siyahısını sistemə əlavə et, hər birinin gündəlik işə gəlib-getmə vaxtlarını qeyd et, gəlməmələrin statistikası cədvələ əlavə olunsun.
+                </p>
+                <a href="javascript:;" class="btn btn-success">
+                    Əməkdaş əlavə et
+                </a>
+            </div>
+
+		</div>
+	</section>
+
+    <div class="help_panel">
+        <div class="overlay"></div>
+        <div class="help_panel_inner">
+            <div class="left_side">
+                <a href="#" class="open_close">
+                    <span>
+                        Help <i class="fa fa-question-circle-o"></i>
+                    </span>
+                </a>
+                <div class="help_panel_header">
+                    <div class="help_panel_header_text">
+                        Kömək
+                    </div>
+                    <a href="javascript:;" class="close">
+                        <img src="img/icons/close.png" alt="Close">
+                    </a>
+                </div>
+                <div class="help_panel_search">
+                    <div class="icon-input">
+                        <input type="text" class="form-control no-border" id="search" placeholder="Axtarış sözünü daxil edin">
+                        <span class="icon-input-icon icon-input-icon-right">
+                            <span>
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="help_panel_body">
+                    <ul class="help_mnu">
+                        <li class="open">
+                            <a href="#" class="first-lvl">
+                                Dashboard
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="first-lvl">
+                                Davamiyyət
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="#" class="mid-lvl">
+                                        İşə gecikən əməkdaşlar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="mid-lvl">
+                                        İcazə alanlar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="mid-lvl">
+                                        İşə qəlməyən əməkdaşlar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="mid-lvl">
+                                        Gecikmə səbəbi
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="mid-lvl">
+                                        Gecikmə vaxtı
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="first-lvl">
+                                Əməkhaqqı
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="first-lvl">
+                                Xərclər
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="first-lvl">
+                                Kassa
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="first-lvl">
+                                Dövriyyə
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="first-lvl">
+                                Borclar
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="first-lvl">
+                                Tapşırıqla
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="first-lvl">
+                                Struktu
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="first-lvl">
+                                Əməkdaşla
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="first-lvl">
+                                İş rejim
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </li>
+                        <li>
+                           <a href="#" class="first-lvl">
+                                Profil
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="first-lvl">
+                                Mesaj qutus
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="first-lvl">
+                                Hesabatlat
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right_side">
+                <div class="help_panel_body">
+                    <div class="help_category">
+                        Davamiyyət jurnalı
+                    </div>
+                    <div class="help_category_article_name">
+                        İşə gəlməyən əməkdaşlar
+                    </div>
+                    <div class="help_category_article_body">
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type.
+                        </p>
+                        <iframe src="https://www.youtube.com/embed/UceaB4D0jpo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione saepe magni, est eaque, sequi veniam vitae enim amet quasi. A consequatur rem similique cumque excepturi qui assumenda quasi repudiandae neque!
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione saepe magni, est eaque, sequi veniam vitae enim amet quasi. A consequatur rem similique cumque excepturi qui assumenda quasi repudiandae neque!
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione saepe magni, est eaque, sequi veniam vitae enim amet quasi. A consequatur rem similique cumque excepturi qui assumenda quasi repudiandae neque!
+                        </p>
+                        <img src="img/samples/1-davamiyyet-short.png">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit repellat corporis, tempora nisi aut earum saepe suscipit veniam in? Quo facere officiis natus, laboriosam perferendis. Harum molestias porro esse, praesentium a, tempora officiis enim rem consequatur repellat quod omnis deserunt dolor saepe amet ut quisquam. Mollitia temporibus nemo ipsam vitae ratione. Nisi pariatur amet maiores cumque saepe veniam dicta architecto illo iste, iure odit harum vero vel voluptatem maxime aut corporis consectetur tenetur, illum. Natus modi quae pariatur corporis qui, velit esse aut. Sint nobis totam incidunt quibusdam, omnis aut, quidem nemo laborum, optio provident temporibus ab accusamus iusto, assumenda.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification_wrapper" data-name="success">
+        <div class="notification animated jackInTheBox success">
+            <div class="notification_header">
+                <a href="javascript:;" class="notifi_close">
+                    <i class="fa fa-times"></i>
+                </a>
+            </div>
+            <div class="notification_body">
+                <h3>Lorem ipsum dolor.</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="notification_footer">
+                <button class="btn btn-success">Bəli, dəyiş</button>
+                <button class="btn btn-default notifi_close">Xeyr</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification_wrapper" data-name="info">
+        <div class="notification animated jackInTheBox info">
+            <div class="notification_header">
+                <a href="javascript:;" class="notifi_close">
+                    <i class="fa fa-times"></i>
+                </a>
+            </div>
+            <div class="notification_body">
+                <h3>Lorem ipsum dolor.</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="notification_footer">
+                <button class="btn btn-info">Bəli, dəyiş</button>
+                <button class="btn btn-default notifi_close">Xeyr</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification_wrapper" data-name="danger">
+        <div class="notification animated jackInTheBox danger">
+            <div class="notification_header">
+                <a href="javascript:;" class="notifi_close">
+                    <i class="fa fa-times"></i>
+                </a>
+            </div>
+            <div class="notification_body">
+                <h3>Lorem ipsum dolor.</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="notification_footer">
+                <button class="btn btn-danger">Bəli, dəyiş</button>
+                <button class="btn btn-default notifi_close">Xeyr</button>
+            </div>
+        </div>
+    </div>
+
+    <a href="javascript:;" data-toggle="modal" data-target="#select-firm" id="firm-selector">dsdsd</a>
+
+    <!-- Modal firm-selector-modal -->
+    <div id="select-firm" class="modal fade firm-selector-modal" role="dialog" data-backdrop="static">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    Şirkət seçimi
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="selector-block selected">
+                                <div class="img">
+                                    <img src="img/samples/fujitsu-logo.png">
+                                </div>
+                                <div class="name">Fujitsu Global</div>
+                                <div class="desc">Administrator</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="selector-block">
+                                <div class="img">
+                                    <img src="img/samples/volkswagen.png">
+                                </div>
+                                <div class="name">Volkswagen Azerbaijan</div>
+                                <div class="desc">Marketinq</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="selector-block">
+                                <div class="img">
+                                    <img src="img/samples/p-g-logo.png">
+                                </div>
+                                <div class="name">Procter & Gamble</div>
+                                <div class="desc">Sosial Media</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="selector-block">
+                                <div class="img">
+                                    <img src="img/samples/deloitte.png">
+                                </div>
+                                <div class="name">Deloitte Corp.</div>
+                                <div class="desc">Dizayn şöbəsi</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-30">
+                        <div class="col-8">
+                            <div class="last-enter">
+                                <div class="checkbox checkbox-success">
+                                    <input id="checkbox021" type="checkbox">
+                                    <label for="checkbox021">
+                                        Sonuncu daxil olunan şirkəti yadda saxla
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="set-default">
+                                <div class="checkbox checkbox-success">
+                                    <input id="checkbox022" type="checkbox">
+                                    <label for="checkbox022">
+                                        Daim
+                                    </label>
+                                </div>
+                                <select class="selectize">
+                                    <option value="0">Fujitsu</option>
+                                </select>
+                                şirkəti ilə daxil ol
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-success btn-md">
+                                Sistemə daxil ol
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="javascript:;" data-toggle="modal" data-target="#person-status" id="person-status-b"></a>
+
+    <!-- Modal person-status-modal -->
+    <div id="person-status" class="modal fade person-status-modal" role="dialog" data-backdrop="static">
+        <div class="modal-dialog modal-sm">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    Əhmədov Gülağa
+                </div>
+                <div class="modal-body">
+                    <span>
+                    	Səbəb
+                    </span>
+                    <select name="" id="" class="selectize">
+                    	<option value="0">Ezamiyyət</option>
+                    </select>
+
+                    <div class="picker sidebar_calendar calendar-fulla">
+                    	<div class="input-daterange input-group demo-3 calendar-full" id="datepicker">
+						    <input type="text" class="form-control input-date ico" name="start" />
+						    <input type="text" class="form-control input-date" name="end" />
+						</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                	<a href="javascript:;" class="btn btn-sm btn-success">
+                		Təsdiq et
+                	</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+	<link rel="stylesheet" href="css/main.min.css">
+	<script src="js/scripts.min.js"></script>
+
+    <script type="text/javascript">
+
+        $( document ).ready(function(){
+
+            $('.input-time').timepicker({
+                minuteStep: 1
+            });
+
+            $('#firm-selector').click();
+
+        });
+
+    </script>
+
+</body>
+</html>

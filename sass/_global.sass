@@ -1,0 +1,345 @@
+// Global styles
+
+//  A resets
+
+a
+    text-decoration: none
+    &::active,
+    &::visited,
+    &::hover
+        color:#fff
+
+//  Placeholder styling
+
+::-webkit-input-placeholder /* Chrome/Opera/Safari */
+    color: #cacaca
+
+::-moz-placeholder /* Firefox 19+ */
+    color: #cacaca
+
+::-ms-input-placeholder /* IE 10+ */
+    color: #cacaca
+
+::-moz-placeholder /* Firefox 18- */
+    color: #cacaca
+
+//  Icon input
+
+.icon-input
+    position: relative
+    padding: 0
+    width: 100%
+    .icon-input-icon
+        position: absolute
+        height: 100%
+        display: inline-block
+        text-align: center
+        top: 0
+        width: 36px
+    .icon-input-icon-right
+        right: 0
+    .icon-input-icon>span>i
+        display: table-cell
+        vertical-align: middle
+        text-align: center
+        line-height: 2
+        color: #cacaca
+
+// Icon btn
+
+.icon-btn
+    span
+        display: table
+
+.icon-btn>span>i,
+.icon-btn>span>img
+    display: table-cell
+    vertical-align: middle
+    line-height: 0
+    width: 17px
+
+.icon-btn>span [class*=" la-"],
+.icon-btn>span [class^=la-]
+    font-size: 1.3rem
+
+.icon-btn>span [class*=" fa-"],
+.icon-btn>span [class^=fa-]
+    font-size: 1.1rem
+
+.icon-btn>span [class*=" flaticon-"],
+.icon-btn>span [class^=flaticon-]
+    font-size: 1.3rem
+
+.icon-btn>span>span
+    padding-left: .5em
+    display: table-cell
+    vertical-align: middle
+    font-size: 12px
+    font-weight: 400
+
+
+// Colors Libruary
+
+.blue-bg
+    background-color: #4e9cdf
+    color: #fff
+
+.blue-bg:hover
+    color: #fff
+    background-color: darken(#4e9cdf, 5%)
+    border-color: darken(#4e9cdf, 5%)
+
+.blue-bg.disabled,
+.blue-bg:disabled
+    background-color: #4e9cdf
+    border-color: #4e9cdf
+
+.blue-bg.active,
+.blue-bg:active
+    background-color: darken(#4e9cdf, 5%)
+    background-image: none
+    border-color: darken(#4e9cdf, 5%)
+
+
+//  Switch - the box around the slider
+.switch
+    position: relative
+    display: inline-block
+    width: 34px
+    height: 20px
+    margin-bottom: 0
+    input
+        display: none
+/* Hide default HTML checkbox
+.switch
+    input
+        display:none
+
+/* The slider
+.slider
+    position: absolute
+    cursor: pointer
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: #c82d3b
+    -webkit-transition: .4s
+    transition: .4s
+    &:before
+        position: absolute
+        content: ""
+        height: 14px
+        width: 14px
+        left: 4px
+        bottom: 3px
+        background-color: white
+        -webkit-transition: .4s
+        transition: .4s
+
+// New Checkbox
+.checkbox
+    padding-left: 20px
+    label
+        display: inline-block
+        position: relative
+        padding-left: 5px
+        &::before
+            content: ""
+            display: inline-block
+            position: absolute
+            width: 17px
+            height: 17px
+            left: 0
+            margin-left: -20px
+            border: 1px solid #cccccc
+            border-radius: 3px
+            background-color: #fff
+            -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out
+            -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out
+            transition: border 0.15s ease-in-out, color 0.15s ease-in-out
+        &::after
+            display: inline-block
+            position: absolute
+            width: 16px
+            height: 16px
+            left: 0
+            top: 0
+            margin-left: -20px
+            padding-left: 3px
+            padding-top: 1px
+            font-size: 11px
+            color: #555555
+    input[type="checkbox"]
+        opacity: 0
+        outline: none
+        height: auto
+        &:focus + label::before
+            outline: none
+        &:checked + label::after
+            font-family: 'FontAwesome'
+            content: "\f00c"
+        &:disabled + label
+            opacity: 0.65
+            &::before
+                background-color: #eeeeee
+                cursor: not-allowed
+    &.checkbox-circle label::before
+        border-radius: 50%
+    &.checkbox-inline
+        margin-top: 0
+
+.checkbox-primary input[type="checkbox"]:checked + label
+    &::before
+        background-color: #428bca
+        border-color: #428bca
+    &::after
+        color: #fff
+
+.checkbox-danger input[type="checkbox"]:checked + label
+    &::before
+        background-color: #d9534f
+        border-color: #d9534f
+    &::after
+        color: #fff
+
+.checkbox-info input[type="checkbox"]:checked + label
+    &::before
+        background-color: #5bc0de
+        border-color: #5bc0de
+    &::after
+        color: #fff
+
+.checkbox-warning input[type="checkbox"]:checked + label
+    &::before
+        background-color: #f0ad4e
+        border-color: #f0ad4e
+    &::after
+        color: #fff
+
+.checkbox-success input[type="checkbox"]:checked + label
+    &::before
+        background-color: #55ab80
+        border-color: #55ab80
+    &::after
+        color: #fff
+
+.radio
+    padding-left: 20px
+    label
+        display: inline-block
+        position: relative
+        padding-left: 5px
+        &::before
+            content: ""
+            display: inline-block
+            position: absolute
+            width: 17px
+            height: 17px
+            left: 0
+            margin-left: -20px
+            border: 1px solid #cccccc
+            border-radius: 50%
+            background-color: #fff
+            -webkit-transition: border 0.15s ease-in-out
+            -o-transition: border 0.15s ease-in-out
+            transition: border 0.15s ease-in-out
+        &::after
+            display: inline-block
+            position: absolute
+            content: " "
+            width: 11px
+            height: 11px
+            left: 3px
+            top: 3px
+            margin-left: -20px
+            border-radius: 50%
+            background-color: #555555
+            -webkit-transform: scale(0, 0)
+            -ms-transform: scale(0, 0)
+            -o-transform: scale(0, 0)
+            transform: scale(0, 0)
+            -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33)
+            -moz-transition: -moz-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33)
+            -o-transition: -o-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33)
+            transition: transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33)
+    input[type="radio"]
+        opacity: 0
+        &:focus + label::before
+        &:checked + label::after
+            -webkit-transform: scale(1, 1)
+            -ms-transform: scale(1, 1)
+            -o-transform: scale(1, 1)
+            transform: scale(1, 1)
+        &:disabled + label
+            opacity: 0.65
+            &::before
+                cursor: not-allowed
+    &.radio-inline
+        margin-top: 0
+
+.radio-primary input[type="radio"]
+    + label::after
+        background-color: #428bca
+    &:checked + label
+        &::before
+            border-color: #428bca
+        &::after
+            background-color: #428bca
+
+.radio-danger input[type="radio"]
+    + label::after
+        background-color: #d9534f
+    &:checked + label
+        &::before
+            border-color: #d9534f
+        &::after
+            background-color: #d9534f
+
+.radio-info input[type="radio"]
+    + label::after
+        background-color: #5bc0de
+    &:checked + label
+        &::before
+            border-color: #5bc0de
+        &::after
+            background-color: #5bc0de
+
+.radio-warning input[type="radio"]
+    + label::after
+        background-color: #f0ad4e
+    &:checked + label
+        &::before
+            border-color: #f0ad4e
+        &::after
+            background-color: #f0ad4e
+
+.radio-success input[type="radio"]
+    + label::after
+        background-color: #5cb85c
+    &:checked + label
+        &::before
+            border-color: #5cb85c
+        &::after
+            background-color: #5cb85c
+
+// Inputs
+
+.bordered
+    border: 1px solid #dedede
+
+input
+    &:checked + .slider
+        background-color: #6fc99c
+    &:focus + .slider
+        box-shadow: 0 0 1px #6fc99c
+    &:checked + .slider:before
+        -webkit-transform: translateX(13px)
+        -ms-transform: translateX(13px)
+        transform: translateX(13px)
+
+/* Rounded sliders
+.slider.round
+    border-radius: 34px
+    &:before
+        border-radius: 50%

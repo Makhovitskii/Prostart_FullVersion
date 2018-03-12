@@ -1,0 +1,738 @@
+$( function() {
+
+    // Custom JS
+
+    // screen_size();
+
+    $( '.calendar-full' ).datepicker( {
+        language : "az" ,
+        todayHighlight : true ,
+        format : "dd/mm/yyyy"
+    } );
+
+    $( '.calendar-month' ).datepicker( {
+        format : "dd/mm/yyyy" ,
+        language : "az" ,
+        todayHighlight : true ,
+        startView : 1 ,
+        minViewMode : 1 ,
+        maxViewMode : 2
+    } );
+
+    $( '.input-date' ).datepicker( {
+        format : 'dd-mm-yyyy' ,
+        language : "az" ,
+        todayHighlight : true ,
+        autoclose : true
+    } );
+
+
+    //
+    // $('#table-state').click(function(event) {
+    //     if($(this).children('span').hasClass('full-table'))
+    //     {
+    //         $(this).children('span').removeClass('full-table').html('Bütün jurnal');
+    //         $('#full-table').fadeOut(100);
+    //         $('#short-table').fadeIn(300);
+    //     }
+    //     else
+    //     {
+    //         $(this).children('span').addClass('full-table').html('Qısa jurnal');
+    //         $('#short-table').fadeOut(100);
+    //         $('#full-table').fadeIn(300);
+    //     }
+    // });
+    //
+    // $('#employee-state').click(function(event) {
+    //     if($(this).children('span').hasClass('full-table'))
+    //     {
+    //         $(this).children('span').removeClass('full-table').html('Vizit kart');
+    //         $('#full-table').fadeOut(100);
+    //         $('#short-table').fadeIn(300);
+    //     }
+    //     else
+    //     {
+    //         $(this).children('span').addClass('full-table').html('Cədvəl');
+    //         $('#short-table').fadeOut(100);
+    //         $('#full-table').fadeIn(300);
+    //     }
+    // });
+    //
+    // $('#structure-state').click(function(event) {
+    //     if($(this).children('span').hasClass('full-table'))
+    //     {
+    //         $(this).children('span').removeClass('full-table').html('Vizual baxış');
+    //         $('#full-table').fadeOut(100);
+    //         $('#short-table').fadeIn(300);
+    //     }
+    //     else
+    //     {
+    //         $(this).children('span').addClass('full-table').html('Cədvəl');
+    //         $('#short-table').fadeOut(100);
+    //         $('#full-table').fadeIn(300);
+    //
+    //         buildStructure();
+    //     }
+    // });
+
+    // Selectize init
+
+    $select = $( '.selectize' ).selectize();
+
+    // Scrolling table sticky head
+
+    // $('.table-hover').tableScroll({height:500});
+
+    // Preloader timeout
+
+    // setTimeout(function(){
+    $( '.preloader' ).fadeOut( 300 );
+    // }, 1000);
+
+    $('[data-toggle="tooltip"]').tooltip()
+
+} );
+
+function screen_size()
+{
+    $( '.content, .nav, .sidebar, .option-panel' ).height( $( document ).height() );
+}
+
+function sidebar_settings()
+{
+    $( '.sidebar_settings' ).slideDown( 300 );
+    $( '#sbs' ).fadeOut( 150 );
+}
+
+function sidebar_settings_close()
+{
+    $( '.sidebar_settings' ).slideUp( 300 );
+    $( '#sbs' ).fadeIn( 150 );
+}
+
+function option_panel(name, size)
+{
+    if(typeof name!='undefined' && name!='' && typeof size!='undefined' && parseInt(size)>0)
+    {
+        $('.option-panel[data-name]').each(function()
+        {
+            if($(this).attr('data-name')!=name && $(this).hasClass('open'))
+            {
+                $(this).removeClass('open');
+                $(this).children('.option-panel-inner').css('left', '-'+size+'px');
+
+                $(this).fadeOut();
+            }
+        });
+
+        setTimeout(function()
+        {
+            var panel = $('.option-panel[data-name="'+name+'"]');
+            panel.toggleClass('open');
+
+            if(panel.hasClass('open'))
+            {
+                panel.fadeIn(500);
+                setTimeout(function()
+                {
+                    panel.children('.option-panel-inner').css('left', '0px');
+                }, 500);
+            }
+            else
+            {
+                panel.children('.option-panel-inner').css('left', '-'+size+'px');
+                setTimeout(function()
+                {
+                    panel.fadeOut(500);
+                }, 500);
+            }
+        }, 500);
+    }
+}
+
+function table_field_editor()
+{
+    $('table tbody tr td[data-toggle="edit"]').on('click', function(event)
+    {
+        if(typeof $(event.target).attr('type')=="undefined")
+        {
+            var ths = $(this);
+            if(!ths.hasClass('sallary-edit')) {
+                var sum = parseInt(ths.find('sum').html());
+                ths.parent('tr').addClass('active');
+                ths.addClass('sallary-edit').html('<input type="text" placeholder="0" value="'+sum+'"><span><i class="fa fa-save"></i></span>');
+            }
+            else
+            {
+                var sum = parseInt(ths.find('input').val());
+                ths.parent('tr').removeClass('active');
+                ths.removeClass('sallary-edit').html('<sum>'+sum+'</sum><span><i class="fa fa-pencil"></i></span>');
+            }
+        }
+
+    });
+}
+
+table_field_editor();
+
+function debt_calculator()
+{
+    $( '.debt-payment-type' ).change( function() {
+
+        var ths = $( this ).parents( 'div[data-name]' );
+
+        if( $( this ).val() == 2 )
+        {
+            if( typeof ths.find( 'input[name="payment_date"]' ).val() == "undefined" || ths.find( 'input[name="payment_date"]' ).val() == "" )
+            {
+                ths.find( 'input[name="payment_date"]' ).css( 'border-color' , '#e74c3c' ).next( 'a' ).css( 'border-color' , '#e74c3c' );
+
+                setTimeout( function() {
+                    ths.find( 'input[name="payment_date"]' ).css( 'border-color' , '#dedede' ).next( 'a' ).css( 'border-color' , '#dedede' );
+                } , 1000 );
+
+                var selectize = $( this )[0].selectize;
+                selectize.setValue( 0 , false );
+
+            }
+            else if( typeof ths.find( 'input[name="amount"]' ).val() == "undefined" || isNaN( parseInt( ths.find( 'input[name="amount"]' ).val() ) ) || parseInt( ths.find( 'input[name="amount"]' ).val() ) <= 0 )
+            {
+                ths.find( 'input[name="amount"]' ).css( 'border-color' , '#e74c3c' );
+
+                setTimeout( function() {
+                    ths.find( 'input[name="amount"]' ).css( 'border-color' , '#dedede' );
+                } , 1000 );
+
+                var selectize = $( this )[0].selectize;
+                selectize.setValue( 0 , false );
+
+            }
+            else
+            {
+                if( ths.find( '.debt-payment-type' ).parents( 'div[data-name]' ).children( 'div.option-panel-inner' ).hasClass( 'small-panel' ) && parseInt( ths.find( '.debt-payment-type' ).val() ) == 2 )
+                {
+                    ths.find( '.debt-payment-type' ).parents( 'div[data-name]' ).children( 'div.option-panel-inner' ).removeClass( 'small-panel' ).addClass( 'debt-panel' );
+                }
+                else
+                {
+                    ths.find( '.debt-payment-type' ).parents( 'div[data-name]' ).children( 'div.option-panel-inner' ).removeClass( 'debt-panel' ).addClass( 'small-panel' );
+                }
+
+                if( parseInt( ths.find( '.debt-payment-type' ).val() ) == 2 )
+                {
+                    ths.find( '.debt-payment-type' ).parents( 'div[data-name]' ).find( 'div.debt-credit-block' ).fadeIn( 800 );
+                }
+                else
+                {
+                    ths.find( '.debt-payment-type' ).parents( 'div[data-name]' ).find( 'div.debt-credit-block' ).fadeOut( 800 );
+                }
+            }
+        }
+        else
+        {
+            $( '.debt-credit-block' ).fadeOut( 400 );
+        }
+    } );
+
+
+    $( 'input[name="month_count"]' ).keyup( function( event ) {
+        var sum = parseInt( $( this ).parents( 'div[data-name]' ).find( 'input[name="amount"]' ).val() ) ,
+            mon = parseInt( $( this ).parents( 'div[data-name]' ).find( 'input[name="month_count"]' ).val() );
+
+        var payment_date = $( this ).closest( 'form' ).find( '[name=payment_date]' ).datepicker( 'getDate' );
+
+        var cem = Math.floor( sum / mon );
+
+        cem = isNaN( cem ) ? null : cem;
+
+        $( this ).parents( 'div[data-name]' ).find( 'input[name="monthly_amount"]' ).val( cem );
+
+        var table = $( this ).parents( 'div[data-name]' ).find( '.debt-credit-table tbody' );
+        table.html( '' );
+
+        for( var i = 1; i <= mon; i++ )
+        {
+            sum = sum - cem;
+            var ots = 0;
+
+            if( i == mon && sum > 0 )
+            {
+                var precent = Math.round( sum * 100 / cem );
+                if( precent <= 50 )
+                {
+                    cem = sum + cem;
+                    sum = 0;
+                }
+                else
+                {
+                    ots = sum;
+                }
+            }
+
+            var date = moment( payment_date ).add( i - 1 , 'M' ).format( 'DD-MM-YYYY' );
+
+            table.append( '<tr>' +
+                '<td>' + i + '</td>' +
+                '<td><input data-plugin="datepicker" class="form-control input-date" name="partly_payment[' + i + '][date]" value="' + date + '"></td>' +
+                '<td><input class="form-control" name="partly_payment[' + i + '][amount]" value="' + cem + '"></td>' +
+                '<td>' + sum + '</td>' +
+                '<td>' +
+                '<span class="flex">' +
+                '<label class="switch">' +
+                '<input type="checkbox" name="partly_payment[' + i + '][status]">' +
+                '<span class="slider round"></span>' +
+                '</label>' +
+                '</span>' +
+                '</td>' +
+                '</tr>' );
+
+            if( ots > 0 )
+            {
+                table.append( '<tr>' +
+                    '<td>' + (i + 1) + '</td>' +
+                    '<td><input data-plugin="datepicker" class="form-control input-date" name="partly_payment[' + i + '][date]" value="' + date + '"></td>' +
+                    '<td><input class="form-control" name="partly_payment[' + i + '][amount]" value="' + ots + '"></td>' +
+                    '<td>' + (sum - ots) + '</td>' +
+                    '<td>' +
+                    '<span class="flex">' +
+                    '<label class="switch">' +
+                    '<input type="checkbox" name="partly_payment[' + i + '][status]">' +
+                    '<span class="slider round"></span>' +
+                    '</label>' +
+                    '</span>' +
+                    '</td>' +
+                    '</tr>' );
+            }
+        }
+
+        table.parent( 'table' ).tableScroll( { height : 200 } );
+
+        Component.Plugin.PluginManager.init( table );
+    } );
+
+    $( 'input[name="amount"]' ).keyup( function( event ) {
+        $( this ).parents( 'div[data-name]' ).find( 'input[name="monthly_amount"]' ).val( '' );
+        $( this ).parents( 'div[data-name]' ).find( 'input[name="month_count"]' ).val( '' );
+        $( this ).parents( 'div[data-name]' ).find( '.debt-credit-table tbody' ).html( '' );
+    } );
+
+    $( 'input[name="monthly_amount"]' ).keyup( function( event ) {
+        var sum = parseInt( $( this ).parents( 'div[data-name]' ).find( 'input[name="amount"]' ).val() ) ,
+            pay = parseInt( $( this ).parents( 'div[data-name]' ).find( 'input[name="monthly_amount"]' ).val() );
+
+        var payment_date = $( this ).closest( 'form' ).find( '[name=payment_date]' ).datepicker( 'getDate' );
+
+        var mon = Math.round( sum / pay );
+
+        mon = isNaN( mon ) ? null : mon;
+
+        $( this ).parents( 'div[data-name]' ).find( 'input[name="month_count"]' ).val( mon );
+
+        var table = $( this ).parents( 'div[data-name]' ).find( '.debt-credit-table tbody' );
+        table.html( '' );
+
+        for( var i = 1; i <= mon; i++ )
+        {
+
+            if( i == mon )
+            {
+                if( sum < pay )
+                {
+                    pay = sum;
+                }
+                else
+                {
+                    sum = sum - pay;
+                    pay = pay + sum;
+                    sum = pay;
+                }
+            }
+
+            var date = moment( payment_date ).add( i - 1 , 'M' ).format( 'DD-MM-YYYY' );
+
+            sum = sum - pay;
+
+            table.append( '<tr>' +
+                '<td>' + i + '</td>' +
+                '<td><input data-plugin="datepicker" class="form-control input-date" name="partly_payment[' + i + '][date]" value="' + date + '"></td>' +
+                '<td><input class="form-control" name="partly_payment[' + i + '][amount]" value="' + pay + '"></td>' +
+                '<td>' + sum + '</td>' +
+                '<td>' +
+                '<span class="flex">' +
+                '<label class="switch">' +
+                '<input type="checkbox" name="partly_payment[' + i + '][status]">' +
+                '<span class="slider round"></span>' +
+                '</label>' +
+                '</span>' +
+                '</td>' +
+                '</tr>' );
+        }
+
+
+        table.parent( 'table' ).tableScroll( { height : 200 } );
+
+        Component.Plugin.PluginManager.init( table );
+
+        // $(this).parents('div[data-name]').find('input[name="month_count"]').val(mon).trigger('keyup');
+
+    } );
+
+    $( "[name=amount]" ).on( "change" , function() {
+        $( ".debt-header span" ).text( $( this ).val() );
+    } );
+}
+
+debt_calculator();
+
+
+//  sidebar_dashboard_menu
+function dashboard_menu()
+{
+    $( document ).on( 'click' , 'a[data-action="sidebar_dashboard_menu"]' , function() {
+        var e = $( this );
+        if( !e.parent( 'li' ).hasClass( 'open' ) )
+        {
+            e.parents( 'ul' ).children( 'li' ).addClass( 'hidden' );
+            e.parent( 'li' ).removeClass( 'hidden' ).addClass( 'open' );
+            e.next( 'div.sidebar_dashboard_menu_sub' ).fadeIn( 500 );
+            e.find( 'i' ).removeClass( 'fa-angle-down' ).addClass( 'fa-times' );
+            var filled = e.hasClass( 'filled' );
+            if( !filled )
+            {
+                var data_path = $( this ).attr( 'data-path' );
+
+                if( !data_path ) return;
+
+                $.post( data_path , {} , function( data ) {
+                    if( data.status === 'success' )
+                    {
+                        e.parents( 'li' ).eq( 0 ).find( '.js-append-here' ).eq( 0 ).html( data.html );
+
+                        e.addClass( 'filled' );
+                    }
+                } );
+            }
+
+        }
+        else
+        {
+            e.find( 'i' ).removeClass( 'fa-times' ).addClass( 'fa-angle-down' );
+            e.parents( 'ul' ).children( 'li' ).removeClass( 'hidden' ).removeClass( 'open' );
+        }
+    } );
+}
+
+dashboard_menu();
+
+function dashboard_progress()
+{
+
+
+}
+
+
+// Wizard
+
+function checkerChange()
+{
+    var state = document.getElementById( $( this ).attr( 'id' ) ).checked ,
+        th = $( this ).parent( 'div' );
+    if( !state )
+    {
+        th.next( ".time" ).hide();
+        th.parent().find( ".break" ).css( "display" , "inline-block" )
+    }
+    else
+    {
+        th.parent().find( ".break" ).hide();
+        th.parent().find( ".time" ).css( "display" , "inline" );
+    }
+}
+
+function displayWorkSchedule()
+{
+    var checked = this.checked;
+    var row = $( this ).closest( '.day' );
+    if( !checked )
+    {
+        $( this ).parent().siblings().eq( 1 ).hide();
+        $( this ).parent().siblings().eq( 2 ).css( "display" , "inline-block" );
+    }
+    else
+    {
+        $( this ).parent().siblings().eq( 1 ).css( "display" , "inline-block" );
+        $( this ).parent().siblings().eq( 2 ).hide();
+    }
+}
+
+function wizardPagesNextprev()
+{
+    if( $( this ).hasClass( 'next' ) )
+    {
+        var th = $( this ).parents( 'div[data-role="wizard-pages"]' );
+        if( th.hasClass( 'page_1' ) || th.hasClass( 'page_2' ) )
+        {
+            th.removeClass( 'active' ).next().addClass( 'active' );
+            $( '.wizard_left_side .pages' ).children( 'div.active' ).removeClass( 'active' ).next().addClass( 'active' );
+        }
+    }
+    else
+    {
+        var th = $( this ).parents( 'div[data-role="wizard-pages"]' );
+        if( th.hasClass( 'page_2' ) || th.hasClass( 'page_3' ) )
+        {
+            th.removeClass( 'active' ).prev().addClass( 'active' );
+            $( '.wizard_left_side .pages' ).children( 'div.active' ).removeClass( 'active' ).prev().addClass( 'active' );
+        }
+    }
+}
+
+
+//  wizard slider
+
+function wizard_slider()
+{
+
+    setTimeout( function() {
+
+        var th = $( '.wizard_slide.active' ) ,
+            dt = $( '.wizard_slide_dots .active' );
+
+        th.removeClass( 'active' );
+        dt.removeClass( 'active' );
+
+        if( th.hasClass( 's1' ) || th.hasClass( 's2' ) )
+        {
+            th.next().addClass( 'active' );
+            dt.next().addClass( 'active' );
+        }
+        else
+        {
+            $( '.wizard_slide.s1' ).addClass( 'active' );
+            $( '.wizard_slide_dots .d1' ).addClass( 'active' );
+        }
+    } , 500 );
+}
+
+function profile_progress( percentege )
+{
+    var line = new ProgressBar.Line( '#profile_p' , {
+        strokeWidth : 4 ,
+        color : '#69cb9d' ,
+        duration : 3000 ,
+        easing : 'easeInOut' ,
+        trailColor : '#eee' ,
+        trailWidth : 3
+    } );
+
+    line.animate( percentege / 100 );
+}
+
+function profile_search()
+{
+    $( '#profile_search' ).unbind( 'click' ).click( function() {
+        $( this ).parent( 'div' ).children( 'div.src_input' ).fadeIn( 300 );
+    } );
+
+    $( '#profile_search_close' ).unbind( 'click' ).click( function( event ) {
+        $( this ).parent( 'div.src_input' ).fadeOut( 300 );
+    } );
+}
+
+
+$( document ).on( 'click' , function() {
+
+} );
+
+function loading( state )
+{
+    var methodName = state ? "show" : "hide";
+    $( "#loading" )[methodName]();
+}
+
+// Employee image cropt
+//
+// function image_crop()
+// {
+//     $('.image-editor').cropit(
+//     {
+//         imageState: {
+//           src: '/uploads/profile/pictures/783ecaa332c0a3e514ea5b4f0147ab89.jpeg',
+//         },
+//         width: 235,
+//         height: 235,
+//     });
+//
+//     $('.rotate-cw').click(function() {
+//         $('.image-editor').cropit('rotateCW');
+//     });
+//     $('.rotate-ccw').click(function() {
+//         $('.image-editor').cropit('rotateCCW');
+//     });
+//
+//     $('.image-select').click(function(){
+//         $(this).parents('div.image-editor').find('.cropit-image-input').click();
+//     });
+// }
+
+function cordion()
+{
+    $( '.cordion .cordion-item .cordion-header span' ).on( 'click' , function() {
+        $( this ).parents( '.cordion' ).children( '.cordion-item' ).toggleClass( 'active' );
+    } );
+}
+
+$( function() {
+    cordion();
+} );
+
+
+function help()
+{
+    $( '.help_panel .open_close' ).on( 'click' , function() {
+        ``
+        $( '.help_panel' ).toggleClass( 'open' );
+    } );
+
+    $( '.help_panel_header a.close' ).on( 'click' , function() {
+        $( '.help_panel' ).removeClass( 'open' );
+    } );
+}
+
+help();
+
+function help_mnu()
+{
+    $( '.help_mnu li a.first-lvl' ).on( 'click' , function() {
+        $( '.help_mnu li' ).removeClass( 'open' );
+        $( '.help_mnu li ul a.mid-lvl' ).removeClass( 'active' );
+        $( this ).parent().addClass( 'open' );
+    } );
+
+    $( '.help_mnu li ul a.mid-lvl' ).on( 'click' , function() {
+        $( this ).parent( 'li' ).parent( 'ul' ).find( 'a' ).removeClass( 'active' );
+        $( this ).addClass( 'active' );
+    } );
+}
+
+help_mnu();
+
+function notification( name )
+{
+    $( '.notification_wrapper[data-name="' + name + '"]' ).addClass( 'open' );
+}
+
+function notificationCloseBtn()
+{
+    $( '.notifi_close' ).on( 'click' , function() {
+        var ths = $( this );
+        ths.parents( 'div.notification' ).removeClass( 'jackInTheBox' ).addClass( 'zoomOut' );
+        setTimeout( function() {
+            ths.parents( 'div.notification_wrapper' ).removeClass( 'open' );
+            ths.parents( 'div.notification' ).removeClass( 'zoomOut' ).addClass( 'jackInTheBox' );
+        } , 500 );
+
+    } );
+}
+
+notificationCloseBtn();
+
+function inOutCheck()
+{
+    $( '.inout .switch input' ).on( 'change' , function() {
+        var checked = this.checked;
+        if( !checked )
+        {
+            $( this ).parent().next().text( 'Gəlib' );
+        }
+        else
+        {
+            $( this ).parent().next().text( 'Gəlməyib' );
+        }
+    } );
+}
+
+function cashbox_add_mexaric()
+{
+    $('.cashbox-add-pm').toggleClass('open');
+    $('.cashbox-add-block').toggle('show');
+
+    if($('.cashbox-add-pm').hasClass('open'))
+    {
+        $('select[name="expense_id"]')[0].selectize.disable();
+    }
+    else
+    {
+        $('select[name="expense_id"]')[0].selectize.enable();
+    }
+}
+
+function taskNotifyTimeSet()
+{
+    $( 'span[role-action="taskModal"]' ).on( 'click' , function(event)
+    {
+        if($(event.target).hasClass('fa-bell-o'))
+        {
+            // You can take tr id and send AJAX query to base, and insert to template values from ajax result
+
+            var tmpl = '<div class="customTaskModalContent">' +
+                            '<div class="row">' +
+                                '<div class="col-6">' +
+                                    '<div class="round-input-label">' +
+                                        '<label>Bildiriş tarixi</label>' +
+                                        '<input type="text" class="form-control input-date">' +
+                                    '</div>' +
+                                '</div>' +
+                                '<div class="col-5">' +
+                                    '<div class="round-input-label">' +
+                                        '<label>Bildiriş vaxtı</label>' +
+                                        '<input type="time" class="form-control">' +
+                                    '</div>' +
+                                '</div>' +
+                                '<div class="col-1">' +
+                                    '<a href="javascript:;" role-action="closeTaskModal">' +
+                                        '<i class="fa fa-times"></i>' +
+                                    '</a>' +
+                                    '<button class="btn btn-danger" role-action="saveTaskModal">' +
+                                        '<i class="fa fa-save"></i>' +
+                                    '</button>' +
+                                '</div>' +
+                            '</div>' +
+                        '</div>';
+
+            // First look for other opened modals and remove it
+
+            $( '.customTaskModalContent' ).remove();
+
+            // After append this modal
+
+            $(this).append(tmpl)
+
+            // Add function to inner elements
+            // Enable input datepicker
+
+            $('.input-date').datepicker({
+                format : 'dd-mm-yyyy',
+                language: "az",
+                todayHighlight: true,
+                autoclose: true
+            });
+
+            // This close button
+            $( '.customTaskModalContent a[role-action="closeTaskModal"]').on('click' , function()
+            {
+                $( '.customTaskModalContent' ).remove();
+            });
+
+            // This save button
+            $( '.customTaskModalContent button[role-action="saveTaskModal"]').on('click' , function()
+            {
+                alert('save true');
+
+                // You can close all after save if you wanna
+                // $( '.customTaskModalContent' ).remove();
+            });
+
+        }
+    });
+}
